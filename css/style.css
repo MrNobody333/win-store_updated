@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 400 62.5% 'Inter', Arial, sans-serif;
+  color: #2f2f35;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header
+============================= */
+.header {
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 0 3px #aeaeae;
+}
+
+.logo-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0;
+}
+
+.logo-group > a {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.logo-group svg {
+  width: 44px;
+  height: 44px;
+}
+
+.logo-group span {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.navbar {
+  flex-basis: 60%;
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: 1.4rem 2.4rem;
+  cursor: pointer;
+}
+
+.navbar__item:first-child {
+  border-radius: 5px;
+  background-color: #eee;
+  transition: .2s background-color ease-in;
+}
+
+.navbar__item:first-child:hover {
+  background-color: #e4e4e4;
+}
+
+.burger-menu {
+  display: inline-block;
+  position: relative;
+  width: 15px;
+  height: 13px;
+  margin-right: 8px;
+}
+
+.burger-menu::before,
+.burger-menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #2f2f35;
+  transition: .2s all ease-in;
+}
+
+.burger-menu::before {
+  top: 0;
+  left: 0;
+}
+
+.burger-menu::after {
+  bottom: 0;
+  left: 0;
+}
+
+.burger-active::before {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.burger-active::after {
+  bottom: 5.4px;
+  transform: rotate(-45deg);
+}
+
+.burger-menu span {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #2f2f35;
+  transition: .2s opacity ease-in;
+}
+
+.span-active {
+  opacity: 0;
+}
+
+.navbar__item:nth-child(2) {
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  position: relative;
+  right: 1rem;
+  bottom: .2rem;
+  width: 1rem;
+  height: 1rem;
+  border-bottom: 3px solid #2f2f35;
+  border-left: 3px solid #2f2f35;
+  transform-origin: .4rem .7rem;
+  transform: rotate(315deg);
+  transition: .3s transform;
+}
+
+.navbar__item:nth-child(2):hover .arrow {
+  transform: rotate(135deg);
+}
+
+.navbar__item:last-child {
+  padding-left: .5rem;
+}
+
+.navbar__item a,
+.drop-down-menu__item a,
+.reviews__item a {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.drop-down-menu {
+  visibility: hidden;
+  position: absolute;
+  top: 45px;
+  right: -25px;
+  width: 25.7rem;
+  overflow: hidden;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  background-color: #fff;
+  opacity: 0;
+  transition: .3s all linear;
+}
+
+.navbar__item:nth-child(2):hover .drop-down-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.drop-down-menu__item {
+  padding-left: 2.4rem;
+  line-height: 3.4;
+  transition: .3s background-color;
+}
+
+.drop-down-menu__item:hover {
+  background-color: #f5f5f5;
+}
+
+.drop-down-menu__item svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.reviews {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: .4rem;
+}
+
+.reviews__item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  transition: .2s color linear;
+}
+
+.reviews__item:hover a {
+  color: #3b71fe;
+}
+
+.reviews__item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Body
+============================= */
