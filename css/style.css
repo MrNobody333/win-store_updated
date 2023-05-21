@@ -1,27 +1,35 @@
 @font-face {
   font-family: 'Inter';
-  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+       url("../fonts/Inter-Regular.woff") format("woff"),
+       url("../fonts/Inter-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url("../fonts/Inter-Medium.ttf") format("truetype");
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+       url("../fonts/Inter-Medium.woff") format("woff"),
+       url("../fonts/Inter-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url("../fonts/Inter-SemiBold.ttf") format("truetype");
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"),
+       url("../fonts/Inter-SemiBold.woff") format("woff"),
+       url("../fonts/Inter-SemiBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url("../fonts/Inter-Bold.ttf") format("truetype");
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
+       url("../fonts/Inter-Bold.woff") format("woff"),
+       url("../fonts/Inter-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
 }
@@ -47,14 +55,15 @@ ul {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1230px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
 }
 
 /* Header
 ============================= */
 .header {
+  margin-bottom: 5rem;
   border-bottom: 1px solid #d0d0d0;
   box-shadow: 0 0 3px #aeaeae;
 }
@@ -118,7 +127,7 @@ ul {
   width: 100%;
   height: 2px;
   background-color: #2f2f35;
-  transition: .2s all ease-in;
+  transition: .2s all ease;
 }
 
 .burger-menu::before {
@@ -149,7 +158,7 @@ ul {
   width: 100%;
   height: 3px;
   background-color: #2f2f35;
-  transition: .2s opacity ease-in;
+  transition: .2s opacity ease;
 }
 
 .span-active {
@@ -192,15 +201,16 @@ ul {
 .drop-down-menu {
   visibility: hidden;
   position: absolute;
-  top: 45px;
-  right: -25px;
+  top: 4.5rem;
+  right: -2.5rem;
+  z-index: 1;
   width: 25.7rem;
   overflow: hidden;
   border: 1px solid #cfcfcf;
   border-radius: 10px;
   background-color: #fff;
   opacity: 0;
-  transition: .3s all linear;
+  transition: .2s all linear;
 }
 
 .navbar__item:nth-child(2):hover .drop-down-menu {
@@ -248,5 +258,69 @@ ul {
   height: 20px;
 }
 
-/* Body
+/* Slider
 ============================= */
+.slider {
+  position: relative;
+  max-width: 117rem;
+}
+
+.slider__item {
+  display: flex;
+  gap: 3rem;
+  overflow: hidden;
+}
+
+.slider__inner {
+  flex-shrink: 0;
+  max-width: 87rem;
+  width: 100%;
+}
+
+.slider__image {
+  width: 100%;
+}
+
+.slider__arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - (47px / 2));
+  width: 4.7rem;
+  height: 4.7rem;
+  border: 1px solid #cbcbcb;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.slider__arrow_prev {
+  left: calc(-47px / 2);
+}
+
+.slider__arrow_next {
+  right: calc(-47px / 2);
+}
+
+.slider__arrow_prev::before,
+.slider__arrow_next::after {
+  content: "";
+  top: 1rem;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: 3px solid #4e4e56;
+}
+
+.slider__arrow_prev::before {
+  border-left: 3px solid #4e4e56;
+  transform-origin: .8rem 1.1rem;
+  transform: rotate(45deg);
+}
+
+.slider__arrow_next::after {
+  border-right: 3px solid #4e4e56;
+  transform-origin: .7rem 1.1rem;
+  transform: rotate(-45deg);
+}
