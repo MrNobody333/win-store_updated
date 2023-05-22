@@ -275,6 +275,7 @@ ul {
   flex-shrink: 0;
   max-width: 87rem;
   width: 100%;
+  transition: .5s all ease-in-out;
 }
 
 .slider__image {
