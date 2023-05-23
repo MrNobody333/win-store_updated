@@ -6,8 +6,8 @@ navbarItem.addEventListener('click', () => {
   burgerMenu.classList.toggle('burger-active');
 });
 
-const sliderArrow = document.querySelectorAll('.slider__arrow');
-const sliderImage = document.querySelectorAll('.slider__inner');
+const sliderArrow = [...document.querySelectorAll('.slider__arrow')];
+const sliderImage = [...document.querySelectorAll('.slider__inner')];
 let count = 0;
 
 sliderArrow.forEach(el => {

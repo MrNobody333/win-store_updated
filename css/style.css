@@ -41,7 +41,7 @@
 }
 
 html {
-  font: 400 62.5% 'Inter', Arial, sans-serif;
+  font: 400 62.5%/1.5 'Inter', Arial, sans-serif;
   color: #2f2f35;
 }
 
@@ -203,7 +203,7 @@ ul {
   position: absolute;
   top: 4.5rem;
   right: -2.5rem;
-  z-index: 1;
+  z-index: 3;
   width: 25.7rem;
   overflow: hidden;
   border: 1px solid #cfcfcf;
@@ -256,6 +256,60 @@ ul {
 .reviews__item svg {
   width: 20px;
   height: 20px;
+}
+
+/* Catalog
+============================= */
+.catalog-menu {
+  position: absolute;
+  top: 8.5rem;
+  z-index: 2;
+  display: flex;
+  max-width: 117rem;
+  padding: 2rem 0;
+  border-radius: 0 0 1rem 1rem;
+  background-color: #fff;
+}
+
+.left-col {
+  flex-basis: 30%;
+}
+
+.left-col li,
+.right-col li {
+  font-size: 1.6rem;
+}
+
+.left-col li {
+  padding: 1.4rem 3.2rem;
+  font-weight: 500;
+}
+
+.left-col li:first-child {
+  color: #777E90;
+}
+
+.right-col {
+  display: none;
+}
+
+.right-col_active {
+  display: block;
+}
+
+.right-col h2 {
+  margin-bottom: 1.6rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.right-col ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-col li {
+  flex-basis: 50%;
 }
 
 /* Slider
@@ -325,3 +379,15 @@ ul {
   transform-origin: .7rem 1.1rem;
   transform: rotate(-45deg);
 }
+
+
+
+
+
+
+footer {
+  padding: 20px 10px;
+  background-color: rgb(242, 255, 0);
+  color: #fff;
+}
+
