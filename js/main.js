@@ -10,6 +10,15 @@ navbarItem.addEventListener('click', () => {
   catalogMenu.classList.toggle('catalog-menu_active');
 });
 
+window.addEventListener('click', e => {
+  if (e.target === overlay) {
+    burgerMenu.firstChild.classList.remove('span-active');
+    burgerMenu.classList.remove('burger-menu_active');
+    overlay.classList.remove('overlay-active');
+    catalogMenu.classList.remove('catalog-menu_active');
+  }
+});
+
 const sliderArrow = [...document.querySelectorAll('.slider__arrow')];
 const sliderImage = [...document.querySelectorAll('.slider__inner')];
 let count = 0;
