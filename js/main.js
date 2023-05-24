@@ -1,9 +1,13 @@
 const navbarItem = document.querySelector('.navbar__item');
 const burgerMenu = document.querySelector('.burger-menu');
+const overlay = document.querySelector('.overlay');
+const catalogMenu = document.querySelector('.catalog-menu');
 
 navbarItem.addEventListener('click', () => {
   burgerMenu.firstChild.classList.toggle('span-active');
   burgerMenu.classList.toggle('burger-active');
+  overlay.classList.toggle('overlay-active');
+  catalogMenu.classList.toggle('catalog-menu_active');
 });
 
 const sliderArrow = [...document.querySelectorAll('.slider__arrow')];

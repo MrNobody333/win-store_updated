@@ -266,6 +266,7 @@ ul {
 ============================= */
 .catalog-menu {
   display: flex;
+  visibility: hidden;
   position: absolute;
   top: 8.5rem;
   left: 3rem;
@@ -274,6 +275,13 @@ ul {
   padding: 2rem 0;
   border-radius: 0 0 1rem 1rem;
   background-color: #fff;
+  transition: .2s all ease-in;
+  opacity: 0;
+}
+
+.catalog-menu_active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .left-col {
@@ -303,12 +311,9 @@ ul {
 .left-col li a {
   display: flex;
   align-items: center;
+  gap: 1.3rem;
   position: relative;
   padding: 1.4rem 3.2rem;
-}
-
-.left-col li a {
-  gap: 1.3rem;
 }
 
 .left-col li:nth-child(n+3):not(:last-child) a::after {
@@ -370,10 +375,34 @@ ul {
 }
 
 .catalog-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 14.8rem;
   margin-top: auto;
+  padding: 0 3.5rem;
   border-radius: 1.4rem;
   background: #1B1B1B url(../images/bg-catalog-banner.png) no-repeat right;
+}
+
+.catalog-banner h3 {
+  font-size: 3.4rem;
+  line-height: 4rem;
+  color: #fff;
+}
+
+.catalog-banner p {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, .75);
+  white-space: pre-line;
+}
+
+.catalog-banner__link {
+  padding: .8rem 1.8rem;
+  border-radius: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #fff;
 }
 
 /* Slider
@@ -452,10 +481,17 @@ ul {
 
 .overlay::before {
   content: "";
+  visibility: hidden;
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: .3s opacity ease-in;
+  transition: .2s all ease-in;
+  opacity: 0;
+}
+
+.overlay-active::before {
+  visibility: visible;
+  opacity: 1;
 }
