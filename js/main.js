@@ -5,7 +5,7 @@ const catalogMenu = document.querySelector('.catalog-menu');
 
 navbarItem.addEventListener('click', () => {
   burgerMenu.firstChild.classList.toggle('span-active');
-  burgerMenu.classList.toggle('burger-active');
+  burgerMenu.classList.toggle('burger-menu_active');
   overlay.classList.toggle('overlay-active');
   catalogMenu.classList.toggle('catalog-menu_active');
 });
