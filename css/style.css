@@ -413,16 +413,19 @@ ul {
 }
 
 .slider__item {
+  overflow: hidden;
+}
+
+.slider__track {
   display: flex;
   gap: 3rem;
-  overflow: hidden;
+  transition: .5s all ease-in-out;
 }
 
 .slider__inner {
   flex-shrink: 0;
   max-width: 87rem;
   width: 100%;
-  transition: .5s all ease-in-out;
 }
 
 .slider__image {
