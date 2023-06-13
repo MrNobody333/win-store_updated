@@ -1,3 +1,4 @@
+// ==================== Burger Menu ====================
 const navbarItem = document.querySelector('.navbar__item');
 const burgerMenu = document.querySelector('.burger-menu');
 const overlay = document.querySelector('.overlay');
@@ -19,6 +20,23 @@ window.addEventListener('click', e => {
   }
 });
 
+// ==================== Tab Menu ====================
+const leftCol = [...document.querySelectorAll('.left-col li:nth-child(n + 3):not(:last-child)')];
+const rightCol = [...document.querySelectorAll('.right-col')];
+
+leftCol[0].style.color = '#3b71fe';
+
+leftCol.forEach((link, index) => {
+  link.addEventListener('mouseover', () => {
+    rightCol.forEach(col => col.classList.remove('right-col_active'));
+    rightCol[index].classList.add('right-col_active');
+    
+    leftCol.forEach(el => el.style.color = '#2f2f35');
+    link.style.color = '#3b71fe';
+  });
+});
+
+// ==================== Main Slider ====================
 const sliderTrack = document.querySelector('.main_track');
 const sliderImage = document.querySelectorAll('.main_image');
 let slideWidth;
@@ -57,9 +75,9 @@ function lastSlide() {
   sliderTrack.style.transform = `translateX(-${count * slideWidth - slideDifference}px)`;
 }
 
-document.querySelectorAll('.slider__arrow').forEach(el => {
-  el.addEventListener('click', () => {
-    if (el.classList.contains('slider__arrow_next')) {
+document.querySelectorAll('.slider__arrow').forEach(arrow => {
+  arrow.addEventListener('click', () => {
+    if (arrow.classList.contains('slider__arrow_next')) {
       next();
     } else {
       prev();
