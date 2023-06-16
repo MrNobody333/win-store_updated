@@ -439,6 +439,7 @@ img {
 
 .slider__item {
   overflow: hidden;
+  user-select: none;
 }
 
 .slider__track {
@@ -554,7 +555,6 @@ img {
 
 .product {
   display: flex;
-  /* align-items: center; */
   gap: 32px;
   padding: 4rem;
   border: 1px solid #e6e8ec;
@@ -575,6 +575,7 @@ img {
   margin-bottom: 16px;
   font-size: 2.4rem;
   font-weight: 700;
+  text-transform: capitalize;
   transition: color .2s;
 }
 
@@ -585,6 +586,7 @@ img {
 .product__reviews {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .product__reviews svg {
@@ -605,6 +607,164 @@ img {
 
 .product__reviews a:hover {
   text-decoration: underline;
+}
+
+.product__price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.old_price {
+  font-size: 1.8rem;
+  text-decoration: line-through;
+  color: #9fa4bc;
+}
+
+.discount {
+  padding: 2px 12px 2px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #fa3b3b;
+}
+
+.timer {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.timer span:nth-child(odd) {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #23262f;
+}
+
+.timer span:nth-child(odd):before {
+  position: absolute;
+  left: 0;
+  bottom: -21px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #9fa4bc;
+}
+
+.timer span:nth-child(1):before {
+  content: "Дни";
+}
+
+.timer span:nth-child(3):before {
+  content: "Часы";
+}
+
+.timer span:nth-child(5):before {
+  content: "Минуты";
+}
+
+.timer span:nth-child(7):before {
+  content: "Секунды";
+}
+
+.timer span:nth-child(even) {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #777e90;
+}
+
+/* Popular goods
+============================= */
+.popular-goods_title {
+  margin-bottom: 8px;
+}
+
+.tabs-menu {
+  margin-bottom: 34px;
+}
+
+.tabs-menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tabs-menu_link {
+  padding: 9px 16px;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #000;
+  background-color: #F6F6F6;
+}
+
+.link_active {
+ border: 1px solid #000;
+ background-color: #fff;
+}
+
+.popular-goods_inner {
+  max-width: 270px;
+}
+
+.popular-goods_image {
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.product__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.product__rate {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product__rate svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffb71d;
+}
+
+.product__rate span,
+.product__comments span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #777e90;
+}
+
+.product__comments {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.product__comments svg {
+  width: 22px;
+  height: 22px;
+  fill: #9fa4bc;
+}
+
+.product__name {
+  display: inline-block;
+  font-size: 18px;
+  transition: .2s color;
+}
+
+.product__name:hover {
+  color: #3B71FE;
 }
 
 /* Overlay
