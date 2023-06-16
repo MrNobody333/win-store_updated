@@ -75,16 +75,54 @@ function lastSlide() {
   sliderTrack.style.transform = `translateX(-${count * slideWidth - slideDifference}px)`;
 }
 
-document.querySelectorAll('.slider__arrow').forEach(arrow => {
-  arrow.addEventListener('click', () => {
-    if (arrow.classList.contains('slider__arrow_next')) {
-      next();
-    } else {
-      prev();
-    }
-    clearInterval(timerId);
-    timerId = setInterval(next, 5000);
-  });
+document.querySelector('.main_next').addEventListener('click', () => {
+  next();
+  sliderDelay();
 });
 
+document.querySelector('.main_prev').addEventListener('click', () => {
+  prev();
+  sliderDelay();
+});
+
+function sliderDelay() {
+  clearInterval(timerId);
+  timerId = setInterval(next, 5000);
+}
+
 timerId = setInterval(next, 5000);
+
+// ==================== Category Slider ====================
+const categoryTrack = document.querySelector('.category_track');
+const categoryImage = document.querySelectorAll('.category_image');
+let categorySlideWidth;
+let catergoryCount = 0;
+
+function CategoryInit() {
+  categorySlideWidth = categoryImage[0].offsetWidth + 30;
+}
+CategoryInit();
+
+window.addEventListener('resize', CategoryInit);
+
+function categoryNext() {
+  catergoryCount >= categoryImage.length -4 ? catergoryCount = 0 : catergoryCount++;
+  categoryRollSlide();
+}
+
+function categoryPrev() {
+  catergoryCount < 1 ? catergoryCount = categoryImage.length -4 : catergoryCount--;
+  categoryRollSlide();
+}
+
+function categoryRollSlide() {
+  categoryTrack.style.transform = `translateX(-${catergoryCount * categorySlideWidth}px)`;
+}
+
+document.querySelector('.category_next').addEventListener('click', () => {
+  categoryNext();
+});
+
+document.querySelector('.category_prev').addEventListener('click', () => {
+  categoryPrev();
+});

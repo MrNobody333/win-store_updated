@@ -54,6 +54,10 @@ ul {
   list-style-type: none;
 }
 
+img {
+  display: block;
+}
+
 .container {
   position: relative;
   max-width: 1230px;
@@ -440,7 +444,7 @@ ul {
 .slider__track {
   display: flex;
   gap: 3rem;
-  transition: .5s all ease-in-out;
+  transition: .5s all ease;
 }
 
 .slider__inner {
@@ -450,7 +454,6 @@ ul {
 }
 
 .slider__image {
-  display: block;
   width: 100%;
 }
 
@@ -536,6 +539,72 @@ ul {
   position: absolute;
   bottom: 0;
   border-radius: 0 0 1.4rem;
+}
+
+/* Day goods
+============================= */
+.day-goods {
+  margin-bottom: 8rem;
+}
+
+.time-limit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  /* align-items: center; */
+  gap: 32px;
+  padding: 4rem;
+  border: 1px solid #e6e8ec;
+  border-radius: 20px;
+}
+
+.product img {
+  max-width: 166px;
+  width: 100%;
+}
+
+.product__body {
+  max-width: 289px;
+}
+
+.product__title {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  transition: color .2s;
+}
+
+.product__title:hover {
+  color: #3B71FE;
+}
+
+.product__reviews {
+  display: flex;
+  align-items: center;
+}
+
+.product__reviews svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  fill: #ffb71d;
+}
+
+.product__reviews svg:last-of-type {
+  margin-right: 12px;
+}
+
+.product__reviews a {
+  font-size: 1.6rem;
+  color: #9fa4bc;
+}
+
+.product__reviews a:hover {
+  text-decoration: underline;
 }
 
 /* Overlay
