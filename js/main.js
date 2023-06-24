@@ -98,12 +98,12 @@ const categoryImage = document.querySelectorAll('.category_image');
 let categorySlideWidth;
 let catergoryCount = 0;
 
-function CategoryInit() {
+function categoryInit() {
   categorySlideWidth = categoryImage[0].offsetWidth + 30;
 }
-CategoryInit();
+categoryInit();
 
-window.addEventListener('resize', CategoryInit);
+window.addEventListener('resize', categoryInit);
 
 function categoryNext() {
   catergoryCount >= categoryImage.length -4 ? catergoryCount = 0 : catergoryCount++;
@@ -126,3 +126,60 @@ document.querySelector('.category_next').addEventListener('click', () => {
 document.querySelector('.category_prev').addEventListener('click', () => {
   categoryPrev();
 });
+
+// ==================== Popular Goods Tab && Slider ====================
+const tabLink = [...document.querySelectorAll('.tab-menu_link')];
+const tabProduct = [...document.querySelectorAll('.tab-products')];
+
+tabProduct[0].classList.add('tab-products_active');
+tabLink[0].classList.add('link_active');
+
+tabLink.forEach((link, index) => {
+  link.addEventListener('click', e => {
+    tabProduct.forEach(el => el.classList.remove('tab-products_active'));
+    tabLink.forEach(el => el.classList.remove('link_active'));
+    tabProduct[index].classList.add('tab-products_active');
+    link.classList.add('link_active');
+    active(tabProduct[index]);
+    
+    e.preventDefault();
+  });
+});
+  
+function active(activeTab) {
+  const popularTrack = activeTab.querySelector('.popular-goods_track');
+  const popularImage = activeTab.querySelectorAll('.popular-goods_image');
+  let popularSlideWidth;
+  let popularCount = 0;
+  
+  function popularInit() {
+    popularSlideWidth = popularImage[0].offsetWidth + 30;
+  }
+  popularInit();
+  
+  window.addEventListener('resize', popularInit);
+  
+  function popularNext() {
+    popularCount >= popularImage.length -4 ? popularCount = 0 : popularCount++;
+    popularRollSlide();
+  }
+  
+  function popularPrev() {
+    popularCount < 1 ? popularCount = popularImage.length -4 : popularCount--;
+    popularRollSlide();
+  }
+  
+  function popularRollSlide() {
+    popularTrack.style.transform = `translateX(-${popularCount * popularSlideWidth}px)`;
+  }
+  
+  activeTab.querySelector('.popular-goods_next').addEventListener('click', () => {
+    popularNext();
+  });
+  
+  activeTab.querySelector('.popular-goods_prev').addEventListener('click', () => {
+    popularPrev();
+  });
+}
+
+active(tabProduct[0]);

@@ -685,17 +685,17 @@ img {
   margin-bottom: 8px;
 }
 
-.tabs-menu {
+.tab-menu {
   margin-bottom: 34px;
 }
 
-.tabs-menu ul {
+.tab-menu ul {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
 
-.tabs-menu_link {
+.tab-menu_link {
   padding: 9px 16px;
   border-radius: 12px;
   font-size: 1.6rem;
@@ -706,8 +706,16 @@ img {
 }
 
 .link_active {
- border: 1px solid #000;
- background-color: #fff;
+  border: 1px solid #000;
+  background-color: #fff;
+ }
+
+.tab-products {
+  display: none
+}
+
+.tab-products_active {
+  display: block;
 }
 
 .popular-goods_inner {
