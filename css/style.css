@@ -72,9 +72,49 @@ img {
 }
 
 .main-text {
-  margin-bottom: 2rem;
+  margin-bottom: 3.4rem;
   font-size: 1.6rem;
   text-align: center;
+}
+
+/* Main Button
+============================= */
+.main-button {
+  text-align: center;
+}
+
+.main-button a {
+  display: inline-block;
+  position: relative;
+  padding: 13px 54px 13px 32px;
+  border: 1px solid #e6e8ec;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #f5f5f5;
+  transition: .3s background-color;
+}
+
+.main-button a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  width: 10px;
+  height: 10px;
+  border: solid #2f2f35;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  transition: .3s all ease;
+}
+
+.main-button a:hover {
+  background-color: #efefef;
+}
+
+.main-button a:hover::after {
+  right: 28px;
 }
 
 /* Header
@@ -118,7 +158,6 @@ img {
 .navbar__item {
   display: inline-block;
   padding: 1.4rem 2.4rem;
-  cursor: pointer;
 }
 
 .navbar__item:first-child {
@@ -129,6 +168,10 @@ img {
 
 .navbar__item:first-child:hover {
   background-color: #e4e4e4;
+}
+
+.navbar__item:nth-child(-n + 2) {
+  cursor: pointer;
 }
 
 .burger-menu {
@@ -196,8 +239,8 @@ img {
   bottom: .2rem;
   width: 1rem;
   height: 1rem;
-  border-bottom: 3px solid #2f2f35;
-  border-left: 3px solid #2f2f35;
+  border: solid #2f2f35;
+  border-width: 0 0 3px 3px;
   transform-origin: .4rem .7rem;
   transform: rotate(315deg);
   transition: .3s transform;
@@ -216,6 +259,10 @@ img {
 .reviews__item a {
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+.navbar__item:nth-child(2) a:active {
+  pointer-events: none;
 }
 
 .drop-down-menu {
@@ -347,8 +394,8 @@ img {
   right: 3.3rem;
   width: 8px;
   height: 8px;
-  border-top: 1px solid #2f2f35;
-  border-right: 1px solid #2f2f35;
+  border: solid #2f2f35;
+  border-width: 1px 1px 0 0;
   transform: rotate(45deg);
 }
 
@@ -681,6 +728,10 @@ img {
 
 /* Popular goods
 ============================= */
+.popular-goods {
+  margin-bottom: 8rem;
+}
+
 .popular-goods_title {
   margin-bottom: 8px;
 }
@@ -703,6 +754,7 @@ img {
   text-transform: capitalize;
   color: #000;
   background-color: #F6F6F6;
+  cursor: pointer;
 }
 
 .link_active {
@@ -718,8 +770,13 @@ img {
   display: block;
 }
 
+.slider-mod {
+  margin-bottom: 2.8rem;
+}
+
 .popular-goods_inner {
   max-width: 270px;
+  width: 23.1%;
 }
 
 .popular-goods_image {
@@ -773,6 +830,61 @@ img {
 
 .product__name:hover {
   color: #3B71FE;
+}
+
+/* Recommended goods
+============================= */
+.recommended-goods_inner {
+  max-width: 270px;
+  width: 23.1%;
+}
+
+.recommended-goods_image {
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+/* Assistance
+============================= */
+.assistance {
+  padding: 40px 0 40px 0;
+  background-color: #f7f7f7;
+}
+
+.assistance__wrapper {
+  background: url(../images/img-chat-new.avif) no-repeat right 0 top -20px;
+}
+
+.assistance__title {
+  margin-bottom: 16px;
+  max-width: 620px;
+  font-size: 3.4rem;
+  font-weight: 600;
+}
+
+.assistance__text {
+  margin-bottom: 28px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.assistance a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 279px;
+}
+
+.assistance span {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #3b71fe;
+}
+
+.assistance svg {
+  width: 37px;
+  height: 37px;
+  fill: #fff;
 }
 
 /* Overlay

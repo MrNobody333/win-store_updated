@@ -4,11 +4,13 @@ const burgerMenu = document.querySelector('.burger-menu');
 const overlay = document.querySelector('.overlay');
 const catalogMenu = document.querySelector('.catalog-menu');
 
-navbarItem.addEventListener('click', () => {
+navbarItem.addEventListener('click', e => {
   burgerMenu.firstChild.classList.toggle('span-active');
   burgerMenu.classList.toggle('burger-menu_active');
   overlay.classList.toggle('overlay-active');
   catalogMenu.classList.toggle('catalog-menu_active');
+
+  e.preventDefault();
 });
 
 window.addEventListener('click', e => {
@@ -100,6 +102,8 @@ let catergoryCount = 0;
 
 function categoryInit() {
   categorySlideWidth = categoryImage[0].offsetWidth + 30;
+  categoryPrev();
+  categoryNext();
 }
 categoryInit();
 
@@ -154,6 +158,8 @@ function active(activeTab) {
   
   function popularInit() {
     popularSlideWidth = popularImage[0].offsetWidth + 30;
+    popularPrev();
+    popularNext();
   }
   popularInit();
   
@@ -183,3 +189,40 @@ function active(activeTab) {
 }
 
 active(tabProduct[0]);
+
+// ==================== Recommended Goods Slider ====================
+const recommendedTrack = document.querySelector('.recommended-goods_track');
+  const recommendedImage = document.querySelectorAll('.recommended-goods_image');
+  let recommendedSlideWidth;
+  let recommendedCount = 0;
+  
+  function recommendedInit() {
+    recommendedSlideWidth = recommendedImage[0].offsetWidth + 30;
+    recommendedPrev();
+    recommendedNext();
+  }
+  recommendedInit();
+  
+  window.addEventListener('resize', recommendedInit);
+  
+  function recommendedNext() {
+    recommendedCount >= recommendedImage.length -4 ? recommendedCount = 0 : recommendedCount++;
+    recommendedRollSlide();
+  }
+  
+  function recommendedPrev() {
+    recommendedCount < 1 ? recommendedCount = recommendedImage.length -4 : recommendedCount--;
+    recommendedRollSlide();
+  }
+  
+  function recommendedRollSlide() {
+    recommendedTrack.style.transform = `translateX(-${recommendedCount * recommendedSlideWidth}px)`;
+  }
+  
+  document.querySelector('.recommended-goods_next').addEventListener('click', () => {
+    recommendedNext();
+  });
+  
+  document.querySelector('.recommended-goods_prev').addEventListener('click', () => {
+    recommendedPrev();
+  });
