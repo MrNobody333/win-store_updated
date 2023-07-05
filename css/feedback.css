@@ -39,13 +39,14 @@ img {
   background-color: #fafafa;
 }
 
-.star {
+.feedbacks svg {
   width: 20px;
   height: 20px;
   margin-left: 4px;
+  fill: #ffb71d;
 }
 
-.star:first-child {
+.feedbacks svg:first-child {
   margin-left: 0;
 }
 

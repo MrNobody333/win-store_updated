@@ -35,17 +35,11 @@ function getData() {
     root.append(div);
     
     for (let i = 0; i < 5; i++) {
-      const img = document.createElement('img');
-      img.className = 'star';
-      img.src = "images/star.svg";
-      img.alt = "star";
-      div.append(img);
-      // const svg = document.createElement('svg');
-      // svg.className = 'stars';
-      // const use = document.createElement('use');
-      // use.setAttributeNS('w3.org/1999/xlink', 'href', 'sprite.svg#star')
-      // svg.append(use);
-      // div.append(svg);
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', 'sprite.svg#star');
+      svg.append(use);
+      div.append(svg);
     }
 
     div.append(h2);
