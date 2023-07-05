@@ -18,7 +18,7 @@ function getData() {
   loader.classList.remove('loader_active');
   btn.disabled = false;
   btn.style.pointerEvents= '';
-  root.innerHTML = '';
+  // root.innerHTML = '';
   
   reviews.forEach(review => {
     const div = document.createElement('div');
@@ -35,17 +35,21 @@ function getData() {
     root.append(div);
     
     for (let i = 0; i < 5; i++) {
-      const img = document.createElement('img');
-      img.className = 'star';
-      img.src = "images/star.svg";
-      img.alt = "star";
-      div.append(img);
-      // const svg = document.createElement('svg');
-      // svg.className = 'stars';
-      // const use = document.createElement('use');
-      // use.setAttributeNS('w3.org/1999/xlink', 'href', 'sprite.svg#star')
-      // svg.append(use);
-      // div.append(svg);
+      // const img = document.createElement('img');
+      // img.className = 'star';
+      // img.src = "images/star.svg";
+      // img.alt = "star";
+      // div.append(img);
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      //svg.className = 'stars';
+      const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+      use.setAttributeNS(
+        "http://www.w3.org/1999/xlink",
+        "xlink:href",
+        "sprite.svg#star"
+      );
+      svg.append(use);
+      div.append(svg);
     }
 
     div.append(h2);
@@ -53,6 +57,7 @@ function getData() {
     div.append(p);
   });
 }
+
 
 function sendRequest() {
   xhr.open('GET', `https://api.digiseller.ru/api/reviews?seller_id=1046704&type=good&rows=${count}`);
