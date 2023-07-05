@@ -39,7 +39,8 @@ img {
   background-color: #fafafa;
 }
 
-.star {
+.feedbacks svg {
+  fill: #ffb71d;
   width: 20px;
   height: 20px;
   margin-left: 4px;
