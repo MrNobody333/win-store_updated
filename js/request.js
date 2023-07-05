@@ -12,8 +12,14 @@ xhr.addEventListener('load', getData);
 window.addEventListener('load', sendRequest);
 btn.addEventListener('click', () => sendRequest(count += 5));
 
-function getData() {
-  const reviews = JSON.parse(xhr.response).review;
+function getData() { 
+  const reviews = JSON.parse(
+    xhr.response.replaceAll('/ 11 Pro+Кэшбэк | Онлайн активация', '')
+                .replaceAll('🔥', '')
+                .replaceAll('| Онлайн активация', '')
+                .replaceAll('+ Кэшбэк 30%', '')
+                .replaceAll('Pro', 'Professional')
+  ).review;
 
   loader.classList.remove('loader_active');
   btn.disabled = false;
