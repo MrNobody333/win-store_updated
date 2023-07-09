@@ -10,7 +10,12 @@ const xhr = new XMLHttpRequest();
 
 xhr.addEventListener('load', getData);
 window.addEventListener('load', sendRequest);
-btn.addEventListener('click', () => sendRequest(count += 5));
+
+btn.addEventListener('click', () => {
+  if (xhr.readyState === xhr.DONE) {
+    sendRequest(count += 5);
+  }
+});
 
 function getData() { 
   const reviews = JSON.parse(
