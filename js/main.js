@@ -5,12 +5,12 @@ const overlay = document.querySelector('.overlay');
 const catalogMenu = document.querySelector('.catalog-menu');
 
 navbarItem.addEventListener('click', e => {
+  e.preventDefault();
+  
   burgerMenu.firstChild.classList.toggle('span-active');
   burgerMenu.classList.toggle('burger-menu_active');
   overlay.classList.toggle('overlay-active');
   catalogMenu.classList.toggle('catalog-menu_active');
-
-  e.preventDefault();
 });
 
 window.addEventListener('click', e => {

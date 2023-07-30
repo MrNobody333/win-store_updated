@@ -49,10 +49,10 @@ document.querySelector('.main_prev').addEventListener('click', () => {
 
 function sliderDelay() {
   clearInterval(timerId);
-  timerId = setInterval(next, 5000);
+  timerId = setInterval(next, 4000);
 }
 
-timerId = setInterval(next, 5000);
+timerId = setInterval(next, 4000);
 
 // ==================== Category Slider ====================
 const categoryTrack = document.querySelector('.category_track');
@@ -100,13 +100,13 @@ tabLink[0].classList.add('link_active');
 
 tabLink.forEach((link, index) => {
   link.addEventListener('click', e => {
+    e.preventDefault();
+    
     tabProduct.forEach(el => el.classList.remove('tab-products_active'));
     tabLink.forEach(el => el.classList.remove('link_active'));
     tabProduct[index].classList.add('tab-products_active');
     link.classList.add('link_active');
     active(tabProduct[index]);
-    
-    e.preventDefault();
   });
 });
   
@@ -186,3 +186,20 @@ const recommendedTrack = document.querySelector('.recommended-goods_track');
   document.querySelector('.recommended-goods_prev').addEventListener('click', () => {
     recommendedPrev();
   });
+
+// ==================== Reed More Btn ====================
+const reedMoreBtn = document.querySelector('.about-us__btn');
+
+reedMoreBtn.addEventListener('click', e => {
+  e.preventDefault();
+
+  const content = document.querySelector('.about-us__content');
+
+  content.classList.toggle('about-us__content_active');
+  content.classList.toggle('about-us__content_bgNone');
+  reedMoreBtn.classList.toggle('about-us__btn_active');
+
+  reedMoreBtn.textContent = content.classList.contains('about-us__content_active') ? 
+    'Скрыть текст' : 
+    'Читать полностью';
+});

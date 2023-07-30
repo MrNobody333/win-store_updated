@@ -62,7 +62,7 @@ img {
   position: relative;
   max-width: 1230px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 30px;
 }
 
 .main-title {
@@ -958,6 +958,232 @@ img {
 .posts__title {
   font-size: 2.4rem;
   line-height: 1.2;
+}
+
+/* About us
+============================= */
+.about-us {
+  margin-bottom: 96px;
+}
+
+.about-us__content {
+  position: relative;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 150px;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  transition: .3s all ease-in;
+}
+
+.about-us__content_active {
+  display: block;
+  height: 238px;
+}
+
+.about-us__content::after {
+  content: "";
+	position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 20%), white 80%);
+  pointer-events: none;
+}
+
+.about-us__content_bgNone::after {
+  background: none;
+}
+
+.about-us__title-h1 {
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.about-us__title-h2{
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.about-us__text {
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+}
+
+.about-us__btn {
+  position: relative;
+  margin-top: 5px;
+  padding-right: 20px;
+  border: none;
+  font: 1.6rem 'Inter';
+  font-weight: 500;
+  color: #3b71fe;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.about-us__btn::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: -5px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #3b71fe;
+  border-bottom: 2px solid #3b71fe;
+  transform: rotate(45deg);
+  transition: .3s all ease-in;
+}
+
+.about-us__btn_active::before {
+  transform-origin: 0.5rem 0.8rem;
+  transform: rotate(225deg);
+}
+
+/* Footer
+============================= */
+.footer {
+  margin-top: 96px;
+}
+
+.footer__content {
+  border-top: 1px solid #ebeaed;
+  border-bottom: 1px solid #ebeaed;
+}
+
+.content_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 30px 40px 30px;
+}
+
+.footer__menu {
+  max-width: 265px;
+  width: 100%;
+}
+
+.footer__menu li {
+  margin-bottom: 8px;
+}
+
+.footer__menu li:first-child {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.footer__menu:nth-child(2) li:nth-child(2) {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.footer__menu:nth-child(2) li:nth-child(2) span {
+  padding: 2px 9px;
+  border: 1px solid #e6e8ec;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: #f5f5f5;
+  transition: 1s all linear;
+}
+
+.footer__menu:nth-child(2) li:nth-child(2):hover span {
+  color: #2f2f35;
+}
+
+.footer__menu li:not(:first-child) {
+  font-size: 1.8rem;
+  transition: .3s color linear;
+  cursor: pointer;
+}
+
+.footer__menu li:not(:first-child):hover {
+  color: #3b71fe;
+}
+
+.contacts {
+  max-width: 265px;
+  width: 100%;
+}
+
+.contacts__title {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.contacts__icon {
+  display: flex;
+  justify-content: space-between;
+  max-width: 185px;
+  height: 48px;
+  margin-bottom: 28px;
+}
+
+.contacts__icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.contacts__icon a:first-child svg {
+  width: 29px;
+  height: 29px;
+}
+
+.contacts__icon a:nth-of-type(2) svg {
+  width: 23px;
+  height: 23px;
+}
+
+.contacts a:last-of-type svg {
+  width: 19px;
+  height: 19px;
+}
+
+.contacts__number {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contacts__shedule {
+  max-width: 209px;
+  font-size: 14px;
+  color: #9fa4bc;
+}
+
+.footer__info {
+  padding: 16px 0;
+  font-size: 1.4rem;
+  color: #9fa4bc;
+}
+
+.info_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 550px;
+  width: 100%;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
 }
 
 /* Overlay
