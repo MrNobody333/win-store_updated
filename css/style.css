@@ -45,6 +45,17 @@ html {
   color: #2f2f35;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  margin: 50px 0 96px 0
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -122,7 +133,6 @@ img {
 .header {
   position: relative;
   z-index: 4;
-  margin-bottom: 5rem;
   border-bottom: 1px solid #d0d0d0;
   background-color: #fff;
   box-shadow: 0 0 3px #aeaeae;
@@ -962,10 +972,6 @@ img {
 
 /* About us
 ============================= */
-.about-us {
-  margin-bottom: 96px;
-}
-
 .about-us__content {
   position: relative;
   display: -webkit-box;
@@ -1047,10 +1053,6 @@ img {
 
 /* Footer
 ============================= */
-.footer {
-  margin-top: 96px;
-}
-
 .footer__content {
   border-top: 1px solid #ebeaed;
   border-bottom: 1px solid #ebeaed;
