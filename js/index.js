@@ -16,17 +16,17 @@ init();
 window.addEventListener('resize', init);
 
 function next() {
-  count >= sliderImage.length -1 ? count = 0 : count++;
+  count >= sliderImage.length - 1 ? count = 0 : count++;
   rollSlide();
 
-  count === sliderImage.length -1 ? lastSlide() : '';
+  count === sliderImage.length - 1 ? lastSlide() : '';
 }
 
 function prev() {
   count < 1 ? count = sliderImage.length -1 : count--;
   rollSlide();
 
-  count === sliderImage.length -1 ? lastSlide() : '';
+  count === sliderImage.length - 1 ? lastSlide() : '';
 }
 
 function rollSlide() {
@@ -70,12 +70,12 @@ categoryInit();
 window.addEventListener('resize', categoryInit);
 
 function categoryNext() {
-  catergoryCount >= categoryImage.length -4 ? catergoryCount = 0 : catergoryCount++;
+  catergoryCount >= categoryImage.length - 4 ? catergoryCount = 0 : catergoryCount++;
   categoryRollSlide();
 }
 
 function categoryPrev() {
-  catergoryCount < 1 ? catergoryCount = categoryImage.length -4 : catergoryCount--;
+  catergoryCount < 1 ? catergoryCount = categoryImage.length - 4 : catergoryCount--;
   categoryRollSlide();
 }
 
@@ -126,12 +126,24 @@ function active(activeTab) {
   window.addEventListener('resize', popularInit);
   
   function popularNext() {
-    popularCount >= popularImage.length -4 ? popularCount = 0 : popularCount++;
+    if (window.innerWidth > 1245) {
+      popularCount >= popularImage.length - 4 ? popularCount = 0 : popularCount++;
+    } else if (window.innerWidth <= 1245 && window.innerWidth > 800) {
+      popularCount >= popularImage.length - 3 ? popularCount = 0 : popularCount++;
+    } else {
+      popularCount >= popularImage.length - 2 ? popularCount = 0 : popularCount++;
+    }
     popularRollSlide();
   }
   
   function popularPrev() {
-    popularCount < 1 ? popularCount = popularImage.length -4 : popularCount--;
+    if (window.innerWidth > 1245) {
+      popularCount < 1 ? popularCount = popularImage.length - 4 : popularCount--;
+    } else if (window.innerWidth <= 1245 && window.innerWidth > 800) {
+      popularCount < 1 ? popularCount = popularImage.length - 3 : popularCount--;
+    } else {
+      popularCount < 1 ? popularCount = popularImage.length - 2 : popularCount--;
+    }
     popularRollSlide();
   }
   
@@ -166,12 +178,24 @@ const recommendedTrack = document.querySelector('.recommended-goods_track');
   window.addEventListener('resize', recommendedInit);
   
   function recommendedNext() {
-    recommendedCount >= recommendedImage.length -4 ? recommendedCount = 0 : recommendedCount++;
+    if (window.innerWidth > 1245) {
+      recommendedCount >= recommendedImage.length - 4 ? recommendedCount = 0 : recommendedCount++;
+    } else if (window.innerWidth <= 1245 && window.innerWidth > 800) {
+      recommendedCount >= recommendedImage.length - 3 ? recommendedCount = 0 : recommendedCount++;
+    } else {
+      recommendedCount >= recommendedImage.length - 2 ? recommendedCount = 0 : recommendedCount++;
+    }
     recommendedRollSlide();
   }
   
   function recommendedPrev() {
-    recommendedCount < 1 ? recommendedCount = recommendedImage.length -4 : recommendedCount--;
+    if (window.innerWidth > 1245) {
+      recommendedCount < 1 ? recommendedCount = recommendedImage.length - 4 : recommendedCount--;
+    } else if (window.innerWidth <= 1245 && window.innerWidth > 800) {
+      recommendedCount < 1 ? recommendedCount = recommendedImage.length - 3 : recommendedCount--;
+    } else {
+      recommendedCount < 1 ? recommendedCount = recommendedImage.length - 2 : recommendedCount--;
+    }
     recommendedRollSlide();
   }
   
